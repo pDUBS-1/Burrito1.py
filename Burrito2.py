@@ -47,29 +47,134 @@
 #Write your code here!
 class Burrito:
     def __init__(self, meat, to_go, rice, beans, extra_meat=False, guacamole=False, cheese=False, pico=False,corn=False):
-        self.meat(meat) = meat
-        self.to_go=to_go
-        self.rice=rice
-        self.beans=beans
-        self.extra_meat=extra_meat
-        self.guacamole=guacamole
-        self.cheese=cheese
-        self.pico=pico
-        self.corn=corn
-class meat:
-    def __init__(self, aMeat):
-        self.aMeat = aMeat    
-    
-    def set_meat(self, aMeat):
-        if aMeat in ["chicken", "pork", "steak", "tofu"]:
-            self.meat = aMeat
+        self.meat = Meat(meat)
+        self.to_go = To_go(to_go)
+        self.rice = Rice(rice)
+        self.beans = Beans(beans)
+        self.extra_meat = Extra_meat(extra_meat)
+        self.guacamole = Guacamole(guacamole)
+        self.cheese = Cheese(cheese)
+        self.pico = Pico(pico)
+        self.corn = Corn(corn)
+
+class Meat:
+    def __init__(self, value=False):
+        self.set_meat(value)    
+
+    def set_meat(self, value):
+        if value in ["chicken", "pork", "steak", "tofu"]:
+            self.value = value
+
         else:
-            self.meat = False
+            self.value = False
 
     def get_meat(self):
-        return self.meat
+        return self.value
 
+class To_go:
+    def __init__(self, value):
+        self.set_to_go(value)   
+    
+    def set_to_go(self, value):
+        if value == True:
+            self.value = value
+        else:
+            self.value = False
+
+    def get_to_go(self):
+        return self.value
+
+class Rice:
+    def __init__(self, value):
+        self.set_rice(value)    
+    
+    def set_rice(self, value):
+        if value in ["brown", "white"]:
+            self.value = value
+        else:
+            self.value = False
+
+    def get_rice(self):
+        return self.value
+    
+class Beans:
+    def __init__(self, value):
+        self.set_beans(value)    
+    
+    def set_beans(self, value):
+        if value in ["black", "pinto"]:
+            self.value = value
+        else:
+            self.value = False
+
+    def get_beans(self):
+        return self.value
+
+class Extra_meat:
+    def __init__(self, value):
+        self.set_extra_meat(value)    
+    
+    def set_extra_meat(self, value):
+        if value == True:
+            self.value = value
+        else:
+            self.value = False
+
+    def get_extra_meat(self):
+        return self.value
+
+class Guacamole:
+    def __init__(self, value):
+        self.set_guacamole(value)   
+    
+    def set_guacamole(self, value):
+        if value == True:
+            self.value = value
+        else:
+            self.value = False
+
+    def get_guacamole(self):
+        return self.value
+    
+class Cheese:
+    def __init__(self, value):
+        self.set_cheese(value)    
+    
+    def set_cheese(self, value):
+        if value == True:
+            self.value = value
+        else:
+            self.value = False
+
+    def get_cheese(self):
+        return self.value
+
+class Pico:
+    def __init__(self, value):
+        self.set_pico(value)   
+    
+    def set_pico(self, value):
+        if value == True:
+            self.value = value
+        else:
+            self.value = False
+
+    def get_pico(self):
+        return self.value
+    
+class Corn:
+    def __init__(self, value):
+        self.set_corn(value)    
+    
+    def set_corn(self, value):
+        if value == True:
+            self.value = value
+        else:
+            self.value = False
+
+    def get_corn(self):
+        return self.value
 #Feel free to add code below to test out the class that
 #you've written. It won't be used for grading.
 
-
+burrito_1 = Burrito("tofu", True, "white", "black")
